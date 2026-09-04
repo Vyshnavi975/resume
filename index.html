@@ -99,8 +99,9 @@
     96%, 100%{clip-path:inset(100% 0 0 0);}
   }
   .avatar-frame{
-    width:120px; height:120px; border-radius:50%; margin:0 auto 30px;
+    width:170px; height:170px; border-radius:50%; margin:0 auto 30px;
     position:relative; display:flex; align-items:center; justify-content:center;
+    perspective:600px;
   }
   .avatar-frame::before{
     content:''; position:absolute; inset:0; border-radius:50%;
@@ -109,11 +110,18 @@
     filter:blur(1px);
   }
   .avatar-frame::after{
-    content:''; position:absolute; inset:4px; border-radius:50%; background:var(--bg);
+    content:''; position:absolute; inset:5px; border-radius:50%; background:var(--bg); z-index:1;
   }
   .avatar-core{
     position:relative; z-index:2; font-family:'Orbitron',sans-serif; font-weight:900;
     font-size:40px; color:#fff; text-shadow:0 0 18px var(--purple);
+  }
+  .avatar-photo{
+    position:relative; z-index:2; width:calc(100% - 12px); height:calc(100% - 12px);
+    border-radius:50%; object-fit:cover; object-position:50% 20%;
+    box-shadow:0 0 30px rgba(199,125,255,0.45);
+    transition:transform .15s ease-out;
+    will-change:transform;
   }
   @keyframes spin{to{transform:rotate(360deg);}}
 
@@ -372,6 +380,7 @@
       <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
         <a class="btn" href="mailto:vyshinavijala@gmail.com">Send Transmission</a>
         <a class="btn" href="resume.html" style="background:linear-gradient(90deg,var(--purple),var(--pink));">View Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/vyshnavi-jala-935519226" target="_blank" rel="noopener" style="background:linear-gradient(90deg,#0a66c2,var(--cyan));">LinkedIn</a>
       </div>
       <span class="gh-link">or find me on <a href="https://github.com/Vyshnavi975" target="_blank" rel="noopener">github.com/Vyshnavi975</a></span>
     </div>
