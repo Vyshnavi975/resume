@@ -76,29 +76,47 @@
     overflow:hidden;
   }
   .glitch::before{
-    left:3px; text-shadow:-2px 0 var(--pink); clip-path:inset(0 0 0 0);
-    animation:glitchTop 4.5s infinite linear alternate-reverse;
+    left:2px; text-shadow:-2px 0 var(--pink); clip-path:inset(0 0 100% 0);
+    animation:glitchTop 6s infinite steps(1);
   }
   .glitch::after{
-    left:-3px; text-shadow:-2px 0 var(--cyan); clip-path:inset(0 0 0 0);
-    animation:glitchBot 3.7s infinite linear alternate-reverse;
+    left:-2px; text-shadow:-2px 0 var(--cyan); clip-path:inset(0 0 100% 0);
+    animation:glitchBot 6s infinite steps(1);
   }
+  /* Name stays clean & readable; a quick glitch burst plays only briefly every cycle */
   @keyframes glitchTop{
-    0%{clip-path:inset(0 0 90% 0);} 10%{clip-path:inset(10% 0 60% 0);}
-    20%{clip-path:inset(70% 0 5% 0);} 30%{clip-path:inset(40% 0 40% 0);}
-    40%{clip-path:inset(80% 0 2% 0);} 50%{clip-path:inset(15% 0 65% 0);}
-    60%{clip-path:inset(55% 0 20% 0);} 70%{clip-path:inset(2% 0 85% 0);}
-    80%{clip-path:inset(30% 0 50% 0);} 90%{clip-path:inset(65% 0 10% 0);}
-    100%{clip-path:inset(0 0 90% 0);}
+    0%, 92%{clip-path:inset(0 0 100% 0);}
+    93%{clip-path:inset(10% 0 60% 0);}
+    94%{clip-path:inset(55% 0 20% 0);}
+    95%{clip-path:inset(20% 0 65% 0);}
+    96%, 100%{clip-path:inset(0 0 100% 0);}
   }
   @keyframes glitchBot{
-    0%{clip-path:inset(85% 0 0 0);} 10%{clip-path:inset(40% 0 30% 0);}
-    20%{clip-path:inset(10% 0 70% 0);} 30%{clip-path:inset(60% 0 15% 0);}
-    40%{clip-path:inset(5% 0 80% 0);} 50%{clip-path:inset(50% 0 25% 0);}
-    60%{clip-path:inset(20% 0 55% 0);} 70%{clip-path:inset(75% 0 5% 0);}
-    80%{clip-path:inset(35% 0 45% 0);} 90%{clip-path:inset(8% 0 75% 0);}
-    100%{clip-path:inset(85% 0 0 0);}
+    0%, 92%{clip-path:inset(100% 0 0 0);}
+    93%{clip-path:inset(35% 0 45% 0);}
+    94%{clip-path:inset(65% 0 10% 0);}
+    95%{clip-path:inset(15% 0 70% 0);}
+    96%, 100%{clip-path:inset(100% 0 0 0);}
   }
+  .avatar-frame{
+    width:120px; height:120px; border-radius:50%; margin:0 auto 30px;
+    position:relative; display:flex; align-items:center; justify-content:center;
+  }
+  .avatar-frame::before{
+    content:''; position:absolute; inset:0; border-radius:50%;
+    background:conic-gradient(from 0deg, var(--cyan), var(--purple), var(--pink), var(--cyan));
+    animation:spin 6s linear infinite;
+    filter:blur(1px);
+  }
+  .avatar-frame::after{
+    content:''; position:absolute; inset:4px; border-radius:50%; background:var(--bg);
+  }
+  .avatar-core{
+    position:relative; z-index:2; font-family:'Orbitron',sans-serif; font-weight:900;
+    font-size:40px; color:#fff; text-shadow:0 0 18px var(--purple);
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+
   .role-tag{
     margin-top:22px; font-size:13px; letter-spacing:3px; text-transform:uppercase;
     color:var(--cyan); border:1px solid var(--cyan); padding:8px 18px; border-radius:2px;
@@ -226,6 +244,7 @@
 </nav>
 
 <section id="hero">
+  <div class="avatar-frame"><div class="avatar-core">V</div></div>
   <h1 class="glitch" data-text="VYSHNAVI">VYSHNAVI</h1>
   <div class="role-tag">AI / ML Engineer</div>
   <div id="typewriter"></div>
@@ -263,13 +282,22 @@
     <p class="section-sub fade-up">Equipped loadout</p>
     <div class="skill-grid">
       <div class="skill-node fade-up"><div class="tier">CORE</div><div class="name">Python</div><div class="bar"><i style="width:95%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">CORE</div><div class="name">SQL</div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">CORE</div><div class="name">Git / GitHub</div><div class="bar"><i style="width:90%"></i></div></div>
       <div class="skill-node fade-up"><div class="tier">LLM</div><div class="name">LangChain</div><div class="bar"><i style="width:90%"></i></div></div>
       <div class="skill-node fade-up"><div class="tier">LLM</div><div class="name">LangGraph</div><div class="bar"><i style="width:90%"></i></div></div>
       <div class="skill-node fade-up"><div class="tier">LLM</div><div class="name">RAG Systems</div><div class="bar"><i style="width:92%"></i></div></div>
-      <div class="skill-node fade-up"><div class="tier">CLOUD</div><div class="name">AWS</div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">LLM</div><div class="name">Prompt Eval</div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">LLM</div><div class="name">Agent Tool-Calling</div><div class="bar"><i style="width:85%"></i></div></div>
       <div class="skill-node fade-up"><div class="tier">ML</div><div class="name">scikit-learn</div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">ML</div><div class="name">Matrix Factorization</div><div class="bar"><i style="width:82%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">ML</div><div class="name">TF-IDF / NLP</div><div class="bar"><i style="width:82%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">DATA</div><div class="name">Pandas / NumPy</div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">DATA</div><div class="name">A/B Testing</div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">INFRA</div><div class="name">FastAPI</div><div class="bar"><i style="width:85%"></i></div></div>
       <div class="skill-node fade-up"><div class="tier">INFRA</div><div class="name">Docker</div><div class="bar"><i style="width:82%"></i></div></div>
-      <div class="skill-node fade-up"><div class="tier">API</div><div class="name">FastAPI</div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">CLOUD</div><div class="name">AWS</div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill-node fade-up"><div class="tier">QA</div><div class="name">Testing (pytest)</div><div class="bar"><i style="width:85%"></i></div></div>
     </div>
   </div>
 </section>
