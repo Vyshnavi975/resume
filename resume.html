@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vyshnavi Jala — Resume</title>
+<meta name="description" content="Resume — Vyshnavi Jala, AI/ML Engineer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05050c; --panel:#0c0c1c; --panel-border:#231a3d;
+    --cyan:#39f5e2; --purple:#c77dff; --pink:#ff2e97;
+    --text:#e4e2f7; --dim:#8783b3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text); font-family:'Share Tech Mono', monospace;
+    max-width:820px; margin:0 auto; padding:50px 26px 80px; line-height:1.6;
+  }
+  h1,h2{font-family:'Orbitron',sans-serif;}
+  a{color:var(--cyan);}
+  .top-bar{display:flex; justify-content:space-between; align-items:center; margin-bottom:36px; flex-wrap:wrap; gap:12px;}
+  .back-link{font-size:12px; letter-spacing:1px; color:var(--dim); text-decoration:none;}
+  .back-link:hover{color:var(--cyan);}
+  .print-btn{
+    font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+    color:#05050c; background:linear-gradient(90deg,var(--cyan),var(--purple));
+    border:none; padding:10px 18px; border-radius:4px; cursor:pointer;
+  }
+  header{border-bottom:1px solid var(--panel-border); padding-bottom:24px; margin-bottom:30px;}
+  header h1{font-size:clamp(28px,5vw,42px); color:#fff;}
+  header .role{color:var(--cyan); letter-spacing:2px; text-transform:uppercase; font-size:13px; margin-top:8px;}
+  .contact-line{margin-top:16px; font-size:13px; color:var(--dim); display:flex; gap:18px; flex-wrap:wrap;}
+  .contact-line a{color:var(--purple);}
+
+  section{margin-bottom:32px;}
+  section h2{
+    font-size:14px; letter-spacing:3px; text-transform:uppercase; color:var(--pink);
+    margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid var(--panel-border);
+  }
+  .summary{color:var(--text); font-size:14.5px;}
+
+  .skill-cat{margin-bottom:12px; font-size:13.5px;}
+  .skill-cat b{color:#fff; font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:1px;}
+  .skill-cat span{color:var(--dim);}
+
+  .proj{margin-bottom:20px;}
+  .proj-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;}
+  .proj-head h3{font-size:15.5px; color:#fff; font-family:'Orbitron',sans-serif;}
+  .proj-head a{font-size:12px; white-space:nowrap;}
+  .proj p{color:var(--dim); font-size:13.5px; margin-top:6px;}
+  .proj .tags{margin-top:8px; font-size:11px; color:var(--purple);}
+
+  .edu-row{display:flex; justify-content:space-between; font-size:14px; flex-wrap:wrap; gap:6px;}
+  .edu-row .school{color:#fff; font-weight:600;}
+
+  footer{margin-top:50px; font-size:11px; color:var(--dim); text-align:center;}
+
+  @media print{
+    body{background:#fff; color:#111; max-width:100%; padding:20px 30px;}
+    .top-bar{display:none;}
+    a{color:#111; text-decoration:none;}
+    header{border-color:#ccc;}
+    header h1{color:#111;}
+    header .role{color:#444;}
+    section h2{color:#444; border-color:#ccc;}
+    .proj-head h3{color:#111;}
+    .skill-cat b{color:#111;}
+    .edu-row .school{color:#111;}
+    footer{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a class="back-link" href="index.html">← Back to site</a>
+  <button class="print-btn" onclick="window.print()">🖨 Save as PDF</button>
+</div>
+
+<header>
+  <h1>Vyshnavi Jala</h1>
+  <div class="role">AI / ML Engineer</div>
+  <div class="contact-line">
+    <a href="mailto:vyshinavijala@gmail.com">vyshinavijala@gmail.com</a>
+    <a href="https://github.com/Vyshnavi975" target="_blank" rel="noopener">github.com/Vyshnavi975</a>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">AI/ML Engineer with 4 years of experience building ML, LLM, and agentic AI systems. Focused on recommendation systems, retrieval-augmented generation, and production-grade agentic pipelines — from offline evaluation through deployment.</p>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <div class="skill-cat"><b>Languages & Core:</b> <span>Python, SQL, Git/GitHub</span></div>
+  <div class="skill-cat"><b>LLM / Agentic AI:</b> <span>LangChain, LangGraph, Retrieval-Augmented Generation (RAG), prompt versioning & evaluation, agent tool-calling</span></div>
+  <div class="skill-cat"><b>Machine Learning:</b> <span>scikit-learn, matrix factorization, TF-IDF / NLP retrieval, statistical A/B testing</span></div>
+  <div class="skill-cat"><b>Data:</b> <span>Pandas, NumPy</span></div>
+  <div class="skill-cat"><b>Infra & Cloud:</b> <span>FastAPI, Docker, AWS, REST APIs</span></div>
+  <div class="skill-cat"><b>Practices:</b> <span>Unit & integration testing (pytest), CI-ready code, offline evaluation metrics (Precision@K, Recall@K, NDCG@K, RMSE)</span></div>
+</section>
+
+<section>
+  <h2>Selected Projects</h2>
+
+  <div class="proj">
+    <div class="proj-head"><h3>Recommendation Engine</h3><a href="https://github.com/Vyshnavi975/recommendation-engine" target="_blank" rel="noopener">github.com/Vyshnavi975/recommendation-engine →</a></div>
+    <p>Hybrid recommender combining matrix factorization and content-based filtering, with a full offline evaluation suite (RMSE, Precision@K, Recall@K, NDCG@K).</p>
+    <div class="tags">Python · scikit-learn · Recommender Systems</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>ML Pipeline Toolkit</h3><a href="https://github.com/Vyshnavi975/ml-pipeline-toolkit" target="_blank" rel="noopener">github.com/Vyshnavi975/ml-pipeline-toolkit →</a></div>
+    <p>Config-driven ML training pipeline plus a from-scratch statistical A/B testing significance module for measuring model impact.</p>
+    <div class="tags">Python · A/B Testing · MLOps</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>LLMOps RAG Agent</h3><a href="https://github.com/Vyshnavi975/llmops-rag-agent" target="_blank" rel="noopener">github.com/Vyshnavi975/llmops-rag-agent →</a></div>
+    <p>Agentic RAG system with versioned prompts, an evaluation harness, cost/token tracking, and run tracing — shipped as a FastAPI web app with a Docker deploy.</p>
+    <div class="tags">LangChain · LangGraph · FastAPI · Docker</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>AI Food Ordering Agent</h3><a href="https://github.com/Vyshnavi975/ai-food-ordering-agent" target="_blank" rel="noopener">github.com/Vyshnavi975/ai-food-ordering-agent →</a></div>
+    <p>LangGraph-based ordering agent with real tool-calling, cart validation, and a bounded retry/human-escalation state machine — shipped as a FastAPI web app with a Docker deploy.</p>
+    <div class="tags">LangGraph · FastAPI · Docker</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>Doc QA RAG</h3><a href="https://github.com/Vyshnavi975/doc-qa-rag" target="_blank" rel="noopener">github.com/Vyshnavi975/doc-qa-rag →</a></div>
+    <p>Document Q&A over PDFs and text using a custom TF-IDF retriever built from scratch.</p>
+    <div class="tags">Python · RAG · TF-IDF</div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><h3>Code Review Assistant</h3><a href="https://github.com/Vyshnavi975/code-review-assistant" target="_blank" rel="noopener">github.com/Vyshnavi975/code-review-assistant →</a></div>
+    <p>Reviews a git diff for bugs, style, and security issues; built to run in CI.</p>
+    <div class="tags">Python · Static Analysis · CI</div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu-row"><span class="school">The University of Toledo</span></div>
+</section>
+
+<footer>vyshnavi975.github.io/resume</footer>
+
+</body>
+</html>
